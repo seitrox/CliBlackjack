@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CliBlackjackV3
+namespace CliBlackjack
 {
     class Deck
     {
@@ -46,8 +46,6 @@ namespace CliBlackjackV3
                 }
             }
         }
-
-
     }
 
 }

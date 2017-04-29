@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CliBlackjackV3
+namespace CliBlackjack
 {
     class Program
     {
@@ -8,6 +8,7 @@ namespace CliBlackjackV3
         {
             Random rnd = new Random();
             Deck gameDeck = new Deck();
+
             gameDeck.CreateDeck(5);
             gameDeck.Shuffle(rnd.Next(2, 5));
 

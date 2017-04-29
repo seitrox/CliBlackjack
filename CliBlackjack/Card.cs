@@ -1,4 +1,4 @@
-﻿namespace CliBlackjackV3
+﻿namespace CliBlackjack
 {
     enum Suit
     {
