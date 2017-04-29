@@ -6,7 +6,7 @@ namespace CliBlackjack
 {
     class Deck
     {
-        int deckCount;
+        private int _deckCount;
         public List<Card> deck = new List<Card>();
         Random rnd = new Random();
 
@@ -15,10 +15,10 @@ namespace CliBlackjack
             //removes the remaining Contents of the deck, once a new deck is needed
             deck.Clear();
 
-            deckCount = DeckCount;
+            _deckCount = DeckCount;
 
             //Itterate for the given amount of Decks
-            for (int i = 0; i < deckCount; i++)
+            for (int i = 0; i < _deckCount; i++)
             {
                 //Itterate over Card Ranks
                 for (int x = 0; x < 13; x++)

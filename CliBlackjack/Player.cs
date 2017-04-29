@@ -1,37 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace CliBlackjack
 {
-    class Hand
+    class Player
     {
-        Random rnd = new Random();
         public int handTotal=0;
+        public string name;
+        public bool draw=true;
+        public bool Busted = false;
+        public List<Card> hand = new List<Card>();
 
-        List<Card> deck;
-        List<Card> hand;
-
-        public Hand(List<Card> Deck)
+        public Player(string Name)
         {
-            deck = Deck;
+            name = Name;
         }
 
-        public void DrawCard()
+        public void GetCards(List<Card> Deck)
         {
-            int cardIndex = rnd.Next(deck.Count - 1);
-            hand.Add(deck[cardIndex]);
-            _CalcHandTotal(hand);
-
-            deck.RemoveAt(cardIndex);
+            hand.Add(Deck[0]);
+            Deck.RemoveAt(0);
+            _CalcHandTotal();
         }
 
-        private void _CalcHandTotal(List<Card> Hand)
+        private void _CalcHandTotal()
         {
-            int aceCount=0;
-            foreach (var card in Hand)
+            handTotal = 0;
+            int aceCount = 0;
+            foreach (var card in hand)
             {
                 if (card.rank == 0)
                 {
@@ -39,7 +34,7 @@ namespace CliBlackjack
                 }
                 else if ((int)card.rank < 10)
                 {
-                    handTotal += (int)card.rank;
+                    handTotal += (int)card.rank+1;
                 }
                 else
                 {
@@ -61,5 +56,6 @@ namespace CliBlackjack
             }
 
         }
+
     }
 }

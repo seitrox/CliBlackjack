@@ -6,13 +6,12 @@ namespace CliBlackjack
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
-            Deck gameDeck = new Deck();
-
-            gameDeck.CreateDeck(5);
-            gameDeck.Shuffle(rnd.Next(2, 5));
-
-            Console.ReadLine();
+            Game game = new Game();
+            while (game.moreGames)
+            {
+                game.PlayGame();
+            }
+            
         }
     }
 }
